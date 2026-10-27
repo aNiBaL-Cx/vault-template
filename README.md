@@ -46,9 +46,10 @@ The number prefixes only set the sort order in the file explorer.
 1. Copy it: `git clone <template-url> <Vault> && rm -rf <Vault>/.git`, or "Use this template" on GitHub.
 2. Open the folder as a vault in Obsidian and install the community plugins listed in `.obsidian/community-plugins.json` (Settings → Community plugins → Browse). Their settings are already in place.
 3. Edit `AGENTS.md`: vault name, purpose, tracker.
-4. Optional, git history:
+4. Agent skills (`notes` and others): run `install.sh` from the [aNiBaL-Cx/dotfiles](https://github.com/aNiBaL-Cx/dotfiles) repo. It links each skill in `agents/skills/` into `~/.claude/skills/` (Claude Code) and `~/.agents/skills/` (Codex, Copilot, Gemini). The same script replaces `~/.zshrc`, `~/.tmux.conf`, `~/.config/nvim`, `~/.claude/CLAUDE.md` and more with links into that repo, so read it first; to get only the skills, link the `agents/skills/<name>` folders yourself.
+5. Optional, git history:
    - `git init -b main`, first commit, private remote.
    - Secrets hook and daily commit (macOS, needs `gitleaks`): run `vault-git/install.sh <name> <Vault> [HH:MM]` from the [aNiBaL-Cx/dotfiles](https://github.com/aNiBaL-Cx/dotfiles) repo. It links the gitleaks pre-commit hook and schedules a daily commit and push (default 19:30), logging to `~/Library/Logs/vault-commit-<name>.log`. The hook and the agent point into that checkout, so keep it where it is; clone it first if you have none (`git clone https://github.com/aNiBaL-Cx/dotfiles`).
-5. Optional, project link: in each project repo that works with this vault, `ln -s <Vault> notes` at the repo root, and add `notes` to that repo's `.git/info/exclude`.
+6. Optional, project link: in each project repo that works with this vault, `ln -s <Vault> notes` at the repo root, and add `notes` to that repo's `.git/info/exclude`.
 
 **Sync** is your choice: git only, or a sync service on top. If the service syncs dot-folders, exclude `.git/` from it.
