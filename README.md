@@ -33,7 +33,7 @@ The number prefixes only set the sort order in the file explorer.
 - **An ongoing responsibility** with no end → `20_Areas/<Area>/`.
 - **Today's notes, quick thoughts, ad-hoc meetings** → the daily note.
 - **Unsure** → `90_Inbox/`, filed within a week.
-- **Finished** → move to `40_Archive/` in Obsidian, keeping the same path below the top folder, so links update.
+- **Finished** → move to `40_Archive/` in Obsidian, keeping the same path below the top folder, so links update. To group a large archive (for example by year, `40_Archive/<Project>/Tasks/<YYYY>/<ID>/`), state the rule here and agents follow it.
 
 ## Naming
 
