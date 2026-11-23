@@ -8,6 +8,7 @@ It is both a human reference and working context for AI agents. Read `README.md`
 
 - `Dashboard.md`: active projects and quick links.
 - `README.md`: structure, placement, naming.
+- `AUDIT.md`: run it when asked to check this vault against the template.
 
 ## Conventions
 
