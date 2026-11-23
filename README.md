@@ -19,6 +19,7 @@ This file is the vault's map and its placement rules. People and agents read it 
 ├── Templates/         Templater templates
 ├── Dashboard.md       Daily hub: active projects, quick links
 ├── AGENTS.md          Instructions for AI agents
+├── AUDIT.md           Prompt for any agent: check this vault against the template
 ├── CLAUDE.md          One line, `@AGENTS.md`, so Claude Code reads the same file
 └── README.md          This file
 ```
@@ -52,5 +53,7 @@ The number prefixes only set the sort order in the file explorer.
    - `git init -b main`, first commit, private remote.
    - Secrets hook and daily commit (macOS, needs `gitleaks`): run `vault-git/install.sh <name> <Vault> [HH:MM]` from the [aNiBaL-Cx/dotfiles](https://github.com/aNiBaL-Cx/dotfiles) repo. It links the gitleaks pre-commit hook and schedules a daily commit and push (default 19:30), logging to `~/Library/Logs/vault-commit-<name>.log`. The hook and the agent point into that checkout, so keep it where it is; clone it first if you have none (`git clone https://github.com/aNiBaL-Cx/dotfiles`).
 6. Optional, project link: in each project repo that works with this vault, `ln -s <Vault> notes` at the repo root, and add `notes` to that repo's `.git/info/exclude`.
+
+**Checking alignment:** to see whether a vault still matches this template, tell any agent "Read `AUDIT.md` and run it." It fetches the latest template, reports breaking, drifted and declared differences, and edits nothing.
 
 **Sync** is your choice: git only, or a sync service on top. If the service syncs dot-folders, exclude `.git/` from it.

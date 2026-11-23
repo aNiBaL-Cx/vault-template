@@ -8,6 +8,7 @@ It is both a human reference and working context for AI agents. Read `README.md`
 
 - `Dashboard.md`: active projects and quick links.
 - `README.md`: structure, placement, naming.
+- `AUDIT.md`: run it when asked to check this vault against the template.
 
 ## Conventions
 
@@ -26,4 +27,5 @@ It is both a human reference and working context for AI agents. Read `README.md`
 
 - **Never paste a credential into a note.** Reference `30_Resources/Keys/<file>` or a password-manager item instead. `30_Resources/Keys/` is ignored by git.
 - In `curl`, env and log snippets, replace every credential (API keys, tokens, cookies, session ids, passwords, `Authorization` and custom auth headers) with `$VAR` or `<redacted>`.
+- **No personal data from customers in notes.** Names, emails and ids of a customer's people, and exports of its records, never enter a note: a versioned vault cannot forget them on request, and `gitleaks` only catches secrets. Describe the case; keep the data where it lives. Naming a customer and describing how it is configured is fine.
 - When the vault is a git repo with the pre-commit hook, `gitleaks` blocks a commit that holds a secret. A deliberate false positive gets `<!-- gitleaks:allow -->` at the end of its line.
