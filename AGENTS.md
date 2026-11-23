@@ -27,4 +27,5 @@ It is both a human reference and working context for AI agents. Read `README.md`
 
 - **Never paste a credential into a note.** Reference `30_Resources/Keys/<file>` or a password-manager item instead. `30_Resources/Keys/` is ignored by git.
 - In `curl`, env and log snippets, replace every credential (API keys, tokens, cookies, session ids, passwords, `Authorization` and custom auth headers) with `$VAR` or `<redacted>`.
+- **No customer data in notes.** Names, emails, ids and exports of customers or tenants never enter a note: a versioned vault cannot forget them on request, and `gitleaks` only catches secrets. Describe the case; keep the data where it lives.
 - When the vault is a git repo with the pre-commit hook, `gitleaks` blocks a commit that holds a secret. A deliberate false positive gets `<!-- gitleaks:allow -->` at the end of its line.
